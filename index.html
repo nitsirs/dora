@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รักพี่ดอร่า</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            transition: background-color 1s ease;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 24px;
+            line-height: 1.5;
+            cursor: pointer;
+        }
+        #textContainer {
+            max-width: 800px;
+            white-space: pre-wrap;
+        }
+        #clickCounter {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border-radius: 10px;
+            transition: transform 0.2s ease-in-out;
+        }
+        #clickCounter.pop {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div id="textContainer"></div>
+    <div id="clickCounter">0</div>
+    <script>
+        const encodedText = "4LmB4Lir4LiwIOC5hiDguITguKXguLTguIHguYPguKvguYnguITguKPguJogNTAg4LiE4Lij4Lix4LmJ4LiH4LiE4Lix4LiaCuC4geC4juC4oeC4teC4reC4ouC4ueC5iOC4p+C5iOC4siDguITguKXguLTguIHguITguKPguJrguKvguYnguLLguKrguLTguJrguITguKPguLHguYnguIfguYDguKHguLfguYjguK3guYTguKvguKPguYgg4LiC4LmJ4Lit4LiE4Lin4Liy4Lih4LiV4LmI4Lit4LmE4Lib4LiI4Liw4LiC4Li24LmJ4LiZ4Lih4LiyCuC4hOC4peC4tOC4gSDguYYK4Liq4Lin4Lix4Liq4LiU4Li14LiE4Lij4Lix4Lia4Lie4Li14LmI4LiU4Lit4Lij4LmI4LiyCuC4ouC4tOC4meC4lOC4teC4l+C4teC5iOC5hOC4lOC5ieC4o+C4ueC5ieC4iOC4seC4geC4hOC4seC4mgrguJzguKHguJXguIfguJnguLAK4LiE4Lil4Li04LiBIOC5hgrguITguKXguLTguIHguK3guLXguIEK8J+Rh/CfkYfwn5GHCuC4reC4teC4gQrguK3guLXguIHguJnguLTguJQK4LiZ4Li04LiU4LmA4LiU4Li14Lii4Lin4Lin4LinCuC4nuC4teC5iOC4lOC4reC4o+C5iOC4suC4o+C4ueC5ieC4oeC4seC5ieC4ouC4hOC4o+C4seC4muC4p+C5iOC4sgrguKfguYjguLLguLLguLIK4Lit4Lii4Liy4LiB4Lij4Li54LmJ4LiE4Lil4Li04LiB4LiV4LmI4LitCuC4hOC4peC4tOC4geC4reC4teC4gQrguK3guLXguIHguJnguLTguJTguYDguJTguLXguKLguKcK4Lic4Lih4Lil4LiH4LiX4Li44LiZ4LmA4Lib4Li04LiU4LmA4Lin4LmH4Lia4LmE4LiL4LiV4LmM4LmD4Lir4LmJ4Lie4Li14LmI4LmA4Lil4Lii4LiZ4Liw4LiE4Lix4LiaCuC5gOC4q+C4meC4t+C5iOC4reC4ouC5hOC4q+C4oQrguKLguLHguIfguYLguJnguLAK4LiW4LmJ4Liy4Lii4Lix4LiH4LmE4Lih4LmI4LmA4Lir4LiZ4Li34LmI4Lit4LiiLi4uCuC4hOC4peC4tOC4geC4leC5iOC4reC4hOC4seC4mgrguYHguK7guYgK4Lii4Lix4LiH4LmE4Lih4LmI4LiW4Li24LiH4LiHCuC4hOC4peC4tOC4geC4reC4teC4gSDguYYK4LiI4Li44LmK4LiaIOC5hgrwn5GH8J+Rh/CfkYcK4Lij4Lix4LiB4Lie4Li14LmI4LiU4Lit4Lij4LmI4Liy4LiZ4Liw4LiE4Lix4LiaCuC4nArguJzguLAK4Lic4LihCuC4reC4ouC4suC4geC4iOC4sOC4luC4suC4oeC4p+C5iOC4sgrguYDguKvguJnguLfguYjguK3guKLguKHguLHguYnguKIK4Liq4Li04LmI4LiH4LiX4Li14LmI4LmA4LiY4Lit4LiX4Liz4Lit4Lii4Li54LmICuC4luC5ieC4suC4ouC4seC4h+C5hOC4oeC5iOC5gOC4q+C4meC4t+C5iOC4reC4ogrguITguKXguLTguIHguJXguYjguK3guITguKPguLHguJoK4Liu4Li04Liu4Li0CvCfmJgK4Liu4Li44Liu4Li4CuC4hOC4t+C4rQrguJ7guLXguYjguITguLHguJoK4Lie4Li14LmI4LmA4Lij4Li14Lii4LiZ4Lir4LiZ4Lix4LiBCuC4nuC4seC4geC4muC5ieC4suC4h+C4meC4sOC4hOC4seC4mgrguJnguK3guJnguYPguKvguYnguITguKPguJrguYHguJvguJTguIrguLHguYjguKfguYLguKHguIcK4LmA4Lib4LmH4LiZ4Lir4LmI4Lin4LiH4LiZ4Liw4LiE4Lix4LiaCuC5gOC4oeC4t+C5iOC4reC4ouC4meC4tOC5ieC4p+C4ouC4seC4hwrguKLguLHguIfguYTguKHguYjguYDguKHguLfguYjguK3guKLguYPguIrguYjguKHguLHguYnguKLguK7guLAK4LiW4LmJ4Liy4Lii4Lix4LiHCuC4hOC4peC4tOC4geC4leC5iOC4reC4reC4reC4reC4rQrguJXguYjguK3guJvguLLguKIK4LiV4LmI4Lit4Lit4Li14LiB4LiBCuC4iOC4sOC4muC4reC4geC4p+C5iOC4sgrguKfguLHguJnguJfguLXguYjguKrguLTguJrguKrguK3guIfguJnguLXguYkK4Lic4Lih4LmE4Lih4LmI4LmE4LiU4LmJ4Lih4Liy4LiH4Liy4LiZ4Lij4Lix4Lia4LiZ4LmJ4Lit4LiH4LiZ4Liw4LiE4Lij4Lix4LiaCuC4guC4reC4reC4oOC4seC4ouC5gOC4m+C5h+C4meC4reC4ouC5iOC4suC4h+C4quC4ueC4h+C4hOC4seC4mgrguJnguYnguLLguLIK4Lii4LiB4LmC4LiX4LiU4LmD4Lir4LmJ4LmE4LiU4LmJ4Lih4Lix4LmJ4LiiCuC4leC4tOC4lOC5gOC4p+C4tOC4o+C5jOC4hOC4iuC4reC4miBDQlQg4LiX4Li14LmI4LiI4Li44Lis4Liy4LiE4Lix4LiaCuC4reC4ouC4suC4geC5hOC4myBSdWJub25nIOC4oeC4suC4geC4geC4geC4gQrguYHguJXguYjguIjguYjguLLguKLguYDguIfguLTguJnguITguYjguLLguYDguKfguLTguKPguYzguITguIrguK3guJrguYTguJvguYHguKXguYnguKcK4Lit4LiUIDU1NTU1CuC4oeC4suC4iOC4reC4ouC4p+C4seC4meC4l+C4teC5iOC4quC4tOC4muC4quC4suC4oeC4p+C4seC4meC5gOC4lOC4teC4ouC4p+C4meC4sOC4hOC4seC4muC4nuC4teC5iOC4lOC4reC4o+C5iOC4sgrguYHguKXguYnguKfguYDguIjguK3guIHguLHguJnguITguLHguJoK4Lit4LmI4LitCuC4oeC4teC4reC4teC4geC5gOC4o+C4t+C5iOC4reC4h+C4meC4tuC4hwrguK3guKLguLLguIHguIjguLDguJrguK3guIHguJ7guLXguYjguKfguYjguLIK4LmA4Lir4Lih4Li34Lit4LiZ4LmA4LiU4Li04LihCuC4reC4ouC4suC4geC4o+C4ueC5ieC4hOC4peC4tOC4geC4leC5iOC4rQrguITguKXguLTguIHguK3guLXguIEK8J+YiwrguK3guLXguIHguIEK4Lic4LihCuC4reC4ouC4suC4geC4iOC4sOC4quC4suC4o+C4oOC4suC4nuC4p+C5iOC4sgrguJzguKEK4LmBCuC4rQrguJoK4LiKCuC4rQrguJoK4LiE4LiZ4LmD4LiZ4LiE4LiT4Liw4LiE4LiZ4LiZ4Li24LiHCuC4hOC4seC4mgrguYDguITguYnguLIK4LiZ4LmI4Liy4Lij4Lix4LiBCuC4oeC4suC4gQrguIEK4LiB4LiBCuC4geC4geC4gQrguIHguIHguIHguIEK4LiB4LiB4LiB4LiB4LiBCuC4geC4geC4geC4geC4geC4gQrguYDguITguYnguLLguIrguLfguYjguK3guILguLbguYnguJnguJXguYnguJnguJTguYnguKfguKIK4LiV4Lix4Lin4Lit4Lix4LiB4Lip4LijCuC4leC4seC4p+C4l+C4teC5iArguK3guKLguLLguIHguKPguLnguYnguITguKXguLTguIEK4LiE4Lil4Li04LiBCuC4reC4teC4gQrguYDguITguYnguLLguIrguLfguYjguK3guILguLbguYnguJnguJXguYnguJnguJTguYnguKfguKIK4LiV4Lix4Lin4Lit4Lix4LiB4Lip4LijCuC4leC4seC4p+C4l+C4teC5iArguKPguLLguIHguJfguLXguYjguKrguK3guIfguILguK3guIcgKDQg4LiE4Li54LiTICjguYTguIvguJnguYzguKLguIHguIHguLPguKXguLHguIfguKrguK3guIfguILguK3guIcgMTgyNzI4MTkg4Lia4Lin4LiBIOC5guC4hOC5hOC4i+C4meC5jOC4ouC4geC4geC4s+C4peC4seC4h+C4quC4reC4h+C4guC4reC4hyAxODI3MjgxOSkpIOC4muC4p+C4gSDguK3guLUg4Lii4LiB4LiB4Liz4Lil4Lix4LiHIOC5hOC4rSDguJ7guLLguKIK4LiZ4Lix4LmI4LiZ4LmB4Lir4Lil4Liw4LiE4Lij4Lix4LiaCuC4nOC4oeC5geC4reC4muC4iuC4reC4muC5gOC4hOC5ieC4suC4oeC4suC4quC4seC4geC4nuC4seC4geC4meC4tuC4h+C4peC4sArguYTguKHguYjguYDguITguKLguJrguK3guIHguYPguITguKPguYDguKXguKLguJnguLDguYDguJnguLXguYjguKIK4Lie4Li14LmI4LiE4LiZ4LmB4Lij4LiB4LmA4Lil4LiiCuC4nOC4oeC4o+C4seC4geC4nuC4teC5iOC4lOC4reC4o+C5iOC4suC4meC4sOC4hOC4o+C4seC4mgrguKrguLHguI3guI3guLLguIHguLHguJrguJzguKHguYTguJTguYnguKHguLHguYnguKIK4Lin4LmI4Liy4LiI4Liw4LmA4LiB4LmH4Lia4LmA4Lib4LmH4LiZ4LiE4Lin4Liy4Lih4Lil4Lix4LiaCuC4iOC4uOC5iuC4miDguYYK4LiC4Lit4Lia4LiE4Li44LiT4Lit4Li44LiV4Liq4LmI4Liy4Lir4LmM4LiX4Li14LmI4Lit4LmI4Liy4LiZ4LiE4Lix4LiaCuC4neC4seC4meC4lOC4teC4hOC4seC4mi4uLgrguJbguYnguLLguKLguLHguIfguYTguKHguYjguJnguK3guJkK4Lii4Lix4LiH4Lih4Li14LiV4LmI4Lit4LiZ4LiwCuC4hOC4peC4tOC4geC5gOC4peC4ogrguITguKXguLTguIHguK3guLXguIEK4Lit4Li14LiB4LiB4LiBCuC5gOC4q+C4meC4t+C5iOC4reC4ouC4ouC4seC4hwrguYTguJvguJnguK3guJnguYTguJTguYnguJnguLAK4LiE4Lil4Li04LiB4Lit4Li14LiBCuC4meC4tOC4lOC5gOC4lOC4teC4ouC4pwrguLPguJ/guJTguJnguJ/guYjguLPguJnguJ7guYDguKrguKfguKvguYAK4Lic4LihCuC4reC4ouC4suC4gQrguIjguLAK4Lia4Lit4LiBCuC4nuC4teC5iArguKfguYjguLIK4LiyCuC4suC4sgrguLLguLLguLIK4Liy4Liy4Liy4LiyCuC4suC4suC4suC4suC4sgrguLLguLLguLLguLLguLLguLIK4Liy4Liy4Liy4Liy4Liy4Liy4LiyCuC4suC4suC4suC4suC4suC4suC4suC4sgrguLLguLLguLLguLLguLLguLLguLLguLLguLIK4Liy4Liy4Liy4Liy4Liy4Liy4Liy4Liy4Liy4LiyCuC4suC4suC4suC4suC4suC4suC4suC4suC4suC4suC4sgrguLLguLLguLLguLLguLLguLLguLLguLLguLLguLLguLLguLIK4Liy4Liy4Liy4Liy4Liy4Liy4Liy4Liy4Liy4Liy4Liy4Liy4LiyCuC4suC4suC4suC4suC4suC4suC4suC4suC4suC4suC4suC4suC4suC4sgrguYDguKvguJnguLfguYjguK3guKLguKLguLHguIcK4LmA4Lit4Liy4LiH4Li14LmJ4Lil4Liw4LiB4Lix4LiZCuC4p+C4seC4meC4meC4teC5iQrguJ7guK3guYHguITguYjguJnguLXguYnguIHguYjguK3guJkK4Lid4Lix4LiZ4LiU4Li14LiE4Lix4Lia4Lic4LihCuC4muC5iuC4suC4ouC4muC4suC4ogpDVSDguITguLHguJo="
+        function b64DecodeUnicode(str) {
+            return decodeURIComponent(atob(str).split('').map(function(c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+        }
+
+        const decodedText = b64DecodeUnicode(encodedText);
+        const lines = decodedText.trim().split("\n");
+
+        let currentLine = 0;
+        let clickCount = 0;
+        const textContainer = document.getElementById('textContainer');
+        const clickCounter = document.getElementById('clickCounter');
+
+        function getRandomColor() {
+            const letters = '89ABCDEF'; // Use lighter colors
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * letters.length)];
+            }
+            return color;
+        }
+
+        function showNextLine() {
+            if (currentLine < lines.length) {
+                textContainer.textContent = lines[currentLine++];
+                document.body.style.backgroundColor = getRandomColor();
+            }
+        }
+
+        function updateClickCounter() {
+            clickCounter.textContent = clickCount;
+            clickCounter.classList.add('pop');
+            setTimeout(() => {
+                clickCounter.classList.remove('pop');
+            }, 200);
+        }
+
+        document.addEventListener('click', () => {
+            clickCount++;
+            updateClickCounter();
+            if (clickCount % 50 === 0) {
+                showNextLine();
+            }
+        });
+
+        // Initialize with the first line
+        showNextLine();
+    </script>
+</body>
+</html>
